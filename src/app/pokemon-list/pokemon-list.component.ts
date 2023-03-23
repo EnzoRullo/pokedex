@@ -12,12 +12,18 @@ export class PokemonListComponent implements OnInit {
   constructor(private pokemonService: PokemonService){
 
   }
-
+  loading: boolean = true;
   pokemons: Pokemon[] = []
 
   ngOnInit(): void {
+    this.getPokemons();
+  }
+
+  getPokemons(){
+    this.loading = true;
     this.pokemonService.search().subscribe(res => {
       this.pokemons = res.data;
+      this.loading = false;
     });
   }
 

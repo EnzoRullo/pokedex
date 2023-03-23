@@ -3,10 +3,18 @@
         <a routerLink="/categorie/{{c.id}}">{{c.name}}</a>
     </li>
 </ul>
- -->
 
- <ul>
+
+<ul>
     <li *ngFor="let p of pokemons">
-       <a routerLink="/pokemons/{{p.id}}">{{p.name}}</a>
+        <a routerLink="/pokemons/{{p.id}}">{{p.name}}</a>
     </li>
- </ul>
+</ul>
+ -->
+ <button type="button" mat-button (click)="getPokemons()">Ricarica</button>
+<div *ngIf="!loading" style="display: flex; flex-wrap:wrap; gap: 0.5em">
+    <app-pokemon-preview *ngFor="let p of pokemons" [pokemon]="p"></app-pokemon-preview>
+</div>
+
+<mat-progress-spinner *ngIf="loading" color="primary" mode="indeterminate" value="50">
+</mat-progress-spinner>
