@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule} from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,9 +16,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule} from '@angular/material/form-field';
 import { PokemonPreviewComponent } from './pokemon-preview/pokemon-preview.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PokemonAttackComponent } from './pokemon-attack/pokemon-attack.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { PokemonCatturatiComponent } from './pokemon-catturati/pokemon-catturati.component';
 
 
 
@@ -30,7 +36,10 @@ import { PokemonAttackComponent } from './pokemon-attack/pokemon-attack.componen
     HomeComponent,
     CategoriaComponent,
     PokemonPreviewComponent,
-    PokemonAttackComponent
+    PokemonAttackComponent,
+    RegisterComponent,
+    LoginComponent,
+    PokemonCatturatiComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +51,10 @@ import { PokemonAttackComponent } from './pokemon-attack/pokemon-attack.componen
     MatIconModule,
     MatCardModule,
     MatListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

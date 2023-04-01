@@ -1,0 +1,43 @@
+<div class="center-screen">
+    <form #laForm="ngForm" class="auth" (ngSubmit)="login()">
+       
+        <mat-form-field appearance="fill">
+            <mat-label>E-mail</mat-label>
+            <input #email="ngModel" required [(ngModel)]="model.email" type="email" matInput name="email"
+                placeholder="E-mail" email>
+            <mat-error *ngIf="email.hasError('required')">
+                E-mail obbligatoria
+            </mat-error>
+            <mat-error *ngIf="email.hasError('email')">
+                E-mail non valida
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input #password="ngModel" required [(ngModel)]="model.password" type="password" matInput name="password"
+                placeholder="Password...">
+            <mat-error *ngIf="password.hasError('required')">
+                Password obbligatoria
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="laForm.form.invalid">Registrami</button>
+
+    </form>
+
+<!--     <ul>
+        <li>valid: {{password.valid}}</li>
+        <li>invalid: {{password.invalid}}</li>
+        <li>dirty: {{password.dirty}}</li>
+        <li>touched: {{password.touched}}</li>
+        <li>pristine: {{password.pristine}}</li>
+        <li>required: {{password.errors?.['required']}}</li>
+        <li>pattern: {{password.errors | json}}</li>
+    </ul>
+
+    <pre>
+        {{laForm.form.valid}}
+        {{model | json}}
+    </pre> -->
+</div>

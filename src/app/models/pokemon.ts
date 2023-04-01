@@ -155,4 +155,10 @@ export interface PokemonSearchResponse {
     text: string
     type: string
   }
+
+  export interface PokemonCatturato {
+    id?: number;
+    userId: number;
+    pokemon: Pokemon;
+  }
   

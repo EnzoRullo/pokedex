@@ -15,3 +15,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .pokemon-card{
     max-width: 300px;
 }
+
+.center-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+form.auth {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.red{
+    background-color: red;
+}

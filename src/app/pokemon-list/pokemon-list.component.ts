@@ -9,7 +9,7 @@ import { PokemonService } from '../pokemon.service';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent implements OnInit {
-  constructor(private pokemonService: PokemonService){
+  constructor(private pokemonService: PokemonService) {
 
   }
   loading: boolean = true;
@@ -19,17 +19,19 @@ export class PokemonListComponent implements OnInit {
     this.getPokemons();
   }
 
-  getPokemons(){
+  getPokemons() {
     this.loading = true;
     this.pokemonService.search().subscribe(res => {
-      this.pokemons = res.data;
+      if (res != undefined) {
+        this.pokemons = res.data;
+      }
       this.loading = false;
     });
   }
 
-/*   categorie: Categoria[] = [
-    {id:1, name:"Viaggi"},
-    {id:2, name:"Cucina"},
-    {id:3, name:"Sport"}
-  ] */
+  /*   categorie: Categoria[] = [
+      {id:1, name:"Viaggi"},
+      {id:2, name:"Cucina"},
+      {id:3, name:"Sport"}
+    ] */
 }

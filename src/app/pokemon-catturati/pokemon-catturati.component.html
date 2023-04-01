@@ -1,0 +1,3 @@
+<div style="display: flex; flex-wrap:wrap; gap: 0.5em">
+    <app-pokemon-preview *ngFor="let p of pokemons" [pokemon]="p.pokemon" [catturato]="true" [idPokemonCatturato]="p.id" (onPokemonLiberato)="ricariaDopoLiberazione()"></app-pokemon-preview>
+</div>
